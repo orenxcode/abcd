@@ -19,13 +19,23 @@ def create_table_lines_route():
 
 @trainsSetupBP.route("/set/insert/trains",methods=["POST"])
 def insert_trains_route():
-    result=TrainsSetupControler.insert_trains_controller()
+    data=request.get_json()
+    name=data["name"]
+    engine=data["engine"]
+    speed=data["speed"]
+    route=data["route"]
+    type=data["type"]
+    line_id=data["line_id"]
+    result=TrainsSetupControler.insert_trains_controller(name,engine,speed,route,type,line_id)
     return jsonify (result)
 
 
 @trainsSetupBP.route("/set/insert/lines",methods=["POST"])
 def insert_lines_route():
-    result=TrainsSetupControler.insert_lines_controller()
+    data=request.get_json()
+    name=data["name"]
+    status=data["status"]
+    result=TrainsSetupControler.insert_lines_controller(name,status)
     return jsonify (result)
 
 

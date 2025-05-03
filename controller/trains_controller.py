@@ -19,7 +19,7 @@ class TrainsController:
                 "type":i[5],
                 "port":i[6],
                 "line_id":i[7],
-                "line_name":[8],
+                "line_name":i[8],
                 "line_status":i[9],
                 "rank":TrainsService.calculate_rank_trains(i[3])
                 }

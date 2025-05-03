@@ -74,9 +74,8 @@ class Trains:
                     SET speed=?
                     WHERE id=?"""
                 cursor.execute(sql,(speed,id))
-                last_update=cursor.lastrowid
                 cursor.close()
-                return f"Train ID: {last_update} / Status: Updated."
+                return f"Train ID: {id} / Status: Updated."
 
 
     @staticmethod
@@ -94,14 +93,13 @@ class Trains:
                 sql="""DELETE FROM trains
                     WHERE id=?"""
                 cursor.execute(sql,(id,))
-                last_delete=cursor.lastrowid
                 cursor.close()
-                return f"Train ID: {last_delete} / Status: Deleted."
+                return f"Train ID: {id} / Status: Deleted."
         
 
     @staticmethod
     def get_train_line_status():
-        with sqlite3.connect("db/trainDB.db") as connection:
+        with sqlite3.connect("db/trainsDB.db") as connection:
             cursor=connection.cursor()
             sql="""SELECT
                 trains.name,
@@ -116,7 +114,7 @@ class Trains:
 
     @staticmethod
     def get_trains_lines_active():
-        with sqlite3.connect("db.trainsDB.db") as connection:
+        with sqlite3.connect("db/trainsDB.db") as connection:
             cursor=connection.cursor()
             sql="""SELECT
                 trains.id, 
