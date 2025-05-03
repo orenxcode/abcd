@@ -97,5 +97,3 @@ class TrainsController:
         return rows
     
 
-
-
