@@ -36,8 +36,12 @@ def create_table_lines():
 def insert_lines(name,status):
     with sqlite3.connect("db/trainsDB.db") as connection:
         cursor=connection.cursor()
-        sql="""INSERT INTO lines (name,status) VALUES (?,?)"""
+        sql="""INSERT INTO lines (
+        name,
+        status) 
+        VALUES (?,?)"""
         cursor.execute(sql,(name,status))
+        last_line=cursor.lastrowid
         cursor.close()
-    return "Line has been inserted."
+    return f"Line {last_line} has been inserted."
 
