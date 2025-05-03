@@ -1,7 +1,7 @@
 from model.trains_setup_model import TrainsSetup
 
 
-class TrainsSetupControlers:
+class TrainsSetupControler:
 
     
     def create_table_trains_controller():
