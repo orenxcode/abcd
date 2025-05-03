@@ -5,4 +5,3 @@ class TrainsService:
         return rank
     
 
-    

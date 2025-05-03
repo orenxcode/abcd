@@ -115,7 +115,7 @@ class Trains:
     
 
     @staticmethod
-    def get_trains_active_lines():
+    def get_trains_lines_active():
         with sqlite3.connect("db.trainsDB.db") as connection:
             cursor=connection.cursor()
             sql="""SELECT
