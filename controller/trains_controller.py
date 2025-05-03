@@ -68,7 +68,7 @@ class TrainsController:
     
 
     @staticmethod
-    def get_train_line_status_controller():
+    def get_trains_lines_status_controller():
         result=Trains.get_train_line_status()
         rows=[]
         for i in result:
