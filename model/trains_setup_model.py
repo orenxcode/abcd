@@ -39,7 +39,6 @@ class TrainsSetup:
                     break
             if count!=1:
                 port=999
-
             sql="""INSERT INTO trains (
                 name,
                 engine,
@@ -65,7 +64,7 @@ class TrainsSetup:
                 status TEXT)"""
             cursor.execute(sql)
             cursor.close()
-        return "Lines table has been created."
+        return "Line table has been created."
 
 
     @staticmethod
@@ -80,4 +79,5 @@ class TrainsSetup:
             last_line=cursor.lastrowid
             cursor.close()
         return f"Line {last_line} has been inserted."
+
 
